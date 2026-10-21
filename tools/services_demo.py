@@ -10,7 +10,7 @@ SERVICES_DEMO = [
  "lead": "Old, rotting or unwanted shed? We tear it down, pull the floor and foundation, haul off every board and leave the ground ready for whatever comes next.",
  "intro": [
   "Sheds are one of the most common jobs we do in Gallatin. Years of Tennessee humidity, termites and storms take a toll on wood sheds, and metal sheds rust through at the seams. Once a shed starts leaning, leaking or housing critters, removing it is usually cheaper and safer than repairing it.",
-  "We handle sheds of every type and size: small garden sheds, 10x12 and 12x16 storage buildings, lean-tos, kit sheds, metal sheds and larger barn-style outbuildings. If the shed is still full, we can empty it first and haul the contents in the same trip."
+  "We handle sheds of every type and size: small garden sheds, 10x12 and 12x16 storage buildings, lean-tos, kit sheds and metal sheds. For barns and large outbuildings, we refer you to a trusted partner. If the shed is still full, we can empty it first and haul the contents in the same trip."
  ],
  "included": ["Emptying the shed of stored items (if needed)", "Disconnecting and capping any simple electrical runs by a licensed electrician when required", "Tear-down of walls, roof, doors and windows", "Removal of the wood floor, skids or runners", "Breaking out a concrete slab or gravel pad (optional add-on)", "Hauling every piece of debris to proper disposal or recycling", "Raking the area and picking up nails with a magnetic sweeper"],
  "steps": [
@@ -27,7 +27,7 @@ SERVICES_DEMO = [
   ("Can you remove a shed that has already collapsed?", "Yes. Collapsed and storm-damaged sheds are common jobs. We just sort the debris and haul it away."),
   ("Can you take the concrete slab too?", "Yes. Slab removal is an add-on. Let us know and we'll include it in your quote.")
  ],
- "related": ["garage-demolition", "concrete-removal", "deck-removal"]
+ "related": ["fence-removal", "concrete-removal", "deck-removal"]
 },
 {
  "slug": "deck-removal", "name": "Deck Removal", "cat": "demolition",
@@ -82,30 +82,30 @@ SERVICES_DEMO = [
  "related": ["landscape-removal", "deck-removal", "concrete-removal"]
 },
 {
- "slug": "garage-demolition", "name": "Garage Demolition", "cat": "demolition",
- "title": "Garage Demolition in Gallatin, TN | Detached & Carports",
- "desc": "Garage demolition in Gallatin, TN. Detached garages, carports and pole barns safely torn down, slabs removed and all debris hauled away. Free quotes.",
- "lead": "Detached garage past saving, or making room for something new? We plan it, tear it down safely, remove the slab if you want, and leave a clean lot.",
+ "slug": "garage-demolition", "name": "Garage Interior Demolition", "cat": "demolition",
+ "title": "Garage Interior Demolition in Gallatin, TN | Free Quote",
+ "desc": "Garage interior demolition in Gallatin, TN. Drywall, shelving, cabinets, workbenches, insulation and old build-outs torn out and hauled away. Free quotes.",
+ "lead": "Turning the garage into a gym, shop or living space, or just starting over? We gut the inside of the garage down to the studs and haul everything away.",
  "intro": [
-  "Detached garages, carports and pole barns are bigger projects than sheds. They usually have electrical service, sometimes a concrete slab and footings, and the roof and framing are heavier. Garage demolition takes planning, the right utility disconnects, and a crew that knows how to bring a structure down in a controlled way.",
-  "We demolish detached garages, carports, pole barns, workshops and the like across Gallatin and Sumner County. Attached garages are a different job, since they share a wall with your home, so we'll talk through what's possible during your quote."
+  "A lot of Gallatin garages have years of add-ons inside: old drywall and paneling, built-in shelving, cabinets, workbenches, pegboard walls, lofts and half-finished rooms. Before a garage conversion, new epoxy floor, storage system or fresh drywall, all of that has to come out.",
+  "We handle the inside of the garage only: walls, ceilings, built-ins and finishes, while the structure itself stays standing. We don't tear down whole garages, barns or other large buildings. If you need a full teardown, call us anyway and we'll point you to a trusted demolition contractor who handles that kind of job."
  ],
- "included": ["Site walk and demolition plan", "Guidance on utility disconnects and permits", "Removal of roofing, siding, doors and windows", "Controlled tear-down of framing", "Slab, footing and apron removal (optional)", "Hauling all debris, with metal and concrete recycled when possible", "Final grading rake-out and cleanup"],
+ "included": ["Drywall, paneling and pegboard removal from walls and ceilings", "Built-in shelving, cabinets, workbenches and lofts", "Old insulation removal", "Interior partition walls and half-finished rooms (non-load-bearing)", "Old carpet, tile, rubber mats or vinyl over the slab", "Protection of the garage door, opener and anything staying", "Hauling all debris, with metal recycled when possible"],
  "steps": [
-  ("On-site quote", "Garages usually get an in-person look. We check the size, roof type, utilities, slab, access and anything close to the structure such as trees, fences or your house."),
-  ("Permits and utilities", "Garage demolition in Gallatin often requires a demolition permit, and electrical, gas and water must be disconnected first. We walk you through what's needed."),
-  ("Strip-out", "Doors, windows, garage door tracks, wiring and any contents are removed first so materials can be separated for recycling."),
-  ("Structural demolition", "The roof and walls are taken down in a controlled sequence, away from your home, fences and trees."),
-  ("Slab and cleanup", "If you want the slab gone, it's broken up and hauled. The site is raked smooth and cleared of nails and debris.")
+  ("Free quote", "Send photos through the form or we stop by. We'll mark exactly what comes out and what stays, like the garage door, opener, water heater and electrical panel."),
+  ("Utilities", "Outlets and lights in walls being opened are de-energized, and any plumbing is capped by a licensed tradesperson before work starts."),
+  ("Protection", "We cover the garage door, opener, water heater and anything staying in place, and protect the path from the garage to our trailer."),
+  ("Tear-out", "Built-ins come out first, then wall and ceiling coverings and insulation, working in an orderly way so the space stays safe."),
+  ("Cleanup", "Everything is hauled away, and the slab is swept and magnet-swept for nails and screws so your next contractor can start right away.")
  ],
- "prep": ["Empty the garage or tell us what goes and what stays", "Schedule the power disconnect, and gas if it's present", "Move vehicles and anything parked near the garage", "Let neighbors know there will be equipment and noise for a day or two"],
- "cost": "Garage demolition pricing depends on square footage, the number of stories, roofing material, whether there's a slab and how thick it is, utility work, access for equipment, and how much is stored inside. We provide a written, itemized quote after the site visit.",
+ "prep": ["Empty the garage, or book a garage clean-out with us first", "Mark anything that stays, such as shelving you want to keep", "Move vehicles out for the day", "Have your contractor confirm which walls, if any, are load-bearing"],
+ "cost": "Garage interior demolition pricing depends on the size of the garage, how many walls and ceilings are being opened, how many built-ins there are, whether there's insulation, and how much debris it all makes. We give a firm, upfront price before we start.",
  "faqs": [
-  ("Do I need a permit to demolish a garage in Gallatin?", "In most cases a detached garage with utilities needs a demolition permit through the City of Gallatin. Requirements in unincorporated Sumner County may differ. We'll help you sort it out."),
-  ("How long does garage demolition take?", "A typical one- or two-car detached garage is usually done in one to two days, plus slab removal if included."),
-  ("Can you demolish an attached garage?", "Sometimes. Because it shares a wall and roofline with the house, it needs careful engineering and usually a contractor to close up the house afterward. We'll discuss it during your quote.")
+  ("Do you tear down whole garages or barns?", "No. We focus on the inside of the garage. For a full garage, barn or large building teardown, call us and we'll refer you to a trusted contractor who handles structural demolition."),
+  ("How long does garage interior demolition take?", "Most one- or two-car garages are gutted in one day, depending on how many walls, ceilings and built-ins are coming out."),
+  ("Can you clear out the garage first?", "Yes. We can do a garage clean-out and the interior demolition in the same visit.")
  ],
- "related": ["shed-removal", "concrete-removal", "exterior-demolition"]
+ "related": ["garage-clean-out", "interior-demolition", "drywall-removal"]
 },
 {
  "slug": "concrete-removal", "name": "Concrete Removal", "cat": "demolition",
@@ -161,14 +161,14 @@ SERVICES_DEMO = [
 },
 {
  "slug": "exterior-demolition", "name": "Exterior Demolition", "cat": "demolition",
- "title": "Exterior Demolition in Gallatin, TN | Porches, Additions & More",
- "desc": "Exterior demolition in Gallatin, TN. Porches, sunrooms, small additions, siding, carports and outdoor structures safely removed and hauled away.",
- "lead": "Porches, sunrooms, small additions, siding, carports, playsets and outdoor structures. We take down what needs to go and protect the rest of your home.",
+ "title": "Exterior Demolition in Gallatin, TN | Porches, Siding & More",
+ "desc": "Exterior demolition in Gallatin, TN. Porches, stoops, siding, awnings, small carports, pergolas and playsets safely removed and hauled away.",
+ "lead": "Porches, stoops, siding, awnings, small carports, pergolas and playsets. We take down what needs to go and protect the rest of your home.",
  "intro": [
-  "Exterior demolition covers anything on the outside of your home or property that needs to be removed: a screened porch, sunroom, small addition, front stoop, carport, awning, old siding, a pool house or a playset. It's often the first step in a renovation, or a way to remove something that's become unsafe.",
+  "Exterior demolition covers anything on the outside of your home or property that needs to be removed: a screened porch, front stoop, awning, small carport, old siding, a gazebo, pergola or playset. It's often the first step in a renovation, or a way to remove something that's become unsafe.",
   "Because many exterior structures are attached to the house, the job is as much about protecting what stays as removing what goes. We plan tie-in points, protect windows and roofing, and leave openings secured so your contractor can pick up right where we stop."
  ],
- "included": ["Porch, stoop and sunroom removal", "Small addition and enclosure tear-out", "Siding, trim and soffit removal", "Awning, carport and canopy removal", "Pool houses, gazebos, pergolas and playsets", "Temporary weatherproofing of openings with plastic or boards", "Hauling all debris, with metal recycled"],
+ "included": ["Porch, stoop and step removal", "Siding, trim and soffit removal", "Awning, small carport and canopy removal", "Gazebos, pergolas and playsets", "Temporary weatherproofing of openings with plastic or boards", "Hauling all debris, with metal recycled"],
  "steps": [
   ("On-site quote", "We look at what's coming off, how it's attached to the house, utilities, roof tie-ins and access. We write down exactly where demolition stops."),
   ("Permits and utilities", "Larger exterior demolition may need a City of Gallatin permit, and any electrical, gas or plumbing must be safely disconnected first."),
@@ -176,12 +176,12 @@ SERVICES_DEMO = [
   ("Demolition", "The structure is taken apart in a planned order, and the connection to the house is detached carefully."),
   ("Secure and clean", "Any openings are temporarily sealed against weather, debris is hauled away and the area is cleaned up.")
  ],
- "prep": ["Clear furniture and belongings out of the porch, sunroom or area", "Have a contractor lined up to close up or rebuild if the structure is attached", "Schedule utility disconnects if there's wiring or plumbing", "Let neighbors know if equipment will be in the driveway"],
+ "prep": ["Clear furniture and belongings out of the porch or work area", "Have a contractor lined up to close up or rebuild if the structure is attached", "Schedule utility disconnects if there's wiring or plumbing", "Let neighbors know if equipment will be in the driveway"],
  "cost": "Exterior demolition pricing depends on the size and type of structure, how it's attached to the house, roofing and foundation materials, utilities, permit needs and site access. We provide a detailed written quote after seeing it in person.",
  "faqs": [
-  ("Will you close up the wall after removing a porch or sunroom?", "We temporarily weatherproof openings with plastic or boards. Permanent repairs such as siding, framing or roofing should be done by your general contractor."),
+  ("Will you close up the wall after removing a porch?", "We temporarily weatherproof openings with plastic or boards. Permanent repairs such as siding, framing or roofing should be done by your general contractor."),
   ("Can you remove vinyl or aluminum siding?", "Yes. We remove siding, trim and soffits ahead of new siding installation and recycle the metal."),
-  ("Do you demolish whole houses?", "Our focus is residential and light commercial demolition of structures, interiors and outdoor features. For full house demolition, call us to discuss your project.")
+  ("Do you demolish whole houses, barns or large buildings?", "No. We focus on interiors and smaller outdoor features. For a full house, barn or large building demolition, call us and we'll refer you to a trusted contractor who handles that work.")
  ],
  "related": ["deck-removal", "garage-demolition", "interior-demolition"]
 },

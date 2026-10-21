@@ -239,7 +239,6 @@ def hero(h1, lead, crumbs=None, eyebrow=None, big=False, context="Website"):
         <ul class="hero-trust">
           <li>Veteran Owned</li>
           <li>Open 24/7 · 365</li>
-          <li>Licensed &amp; Insured</li>
           <li>Upfront Pricing</li>
           <li>Full Cleanup Included</li>
         </ul>
@@ -361,7 +360,7 @@ def write(path, html, priority=None):
 # ---------------------------------------------------------------- pages
 
 HOME_FAQS = [
-    ("How much does demolition cost in Gallatin, TN?", "Cost depends on the size of the structure, materials, access and disposal. Small jobs like a shed or deck cost far less than a garage or full interior tear-out. We give free, no-obligation quotes so you know the price before work begins."),
+    ("How much does demolition cost in Gallatin, TN?", "Cost depends on the size of the structure, materials, access and disposal. Small jobs like a shed or deck cost far less than a full interior tear-out. We give free, no-obligation quotes so you know the price before work begins."),
     ("Do I need a permit to demolish a structure in Gallatin?", "Many demolition projects in Gallatin require a permit from the City of Gallatin Codes Department, and utilities must be disconnected first. We can walk you through what your project needs."),
     ("What junk do you haul away?", "Furniture, appliances, mattresses, yard waste, construction debris, hot tubs, playsets, garage, attic and crawlspace clutter, and full estate clean-outs. We cannot take hazardous materials such as paint, chemicals or asbestos."),
     ("Do you protect my home during a remodel?", "Yes. We offer floor protection, surface protection, professional tape-off and plastic dust barriers, either with our demolition work or on their own for your contractor's project."),
@@ -377,7 +376,7 @@ def build_home():
     areas = "".join(f'<li><a href="/service-areas/{l["slug"]}/">{e(l["name"])}</a></li>' for l in LOCATIONS)
     cities = "".join(f"<li>{c}</li>" for c in NEARBY_CITIES)
     body = hero(f'Demolition &amp; Junk Removal in <span class="gold">{CITY}, {STATE}</span>',
-                "From sheds, decks and garages to full interior tear-outs and clean-outs, we knock it down, haul it off "
+                "From sheds, decks and fences to full interior tear-outs and clean-outs, we knock it down, haul it off "
                 "and leave your property clean. Veteran owned. Open 24/7.",
                 eyebrow=f"{CITY}, Tennessee", big=True, context="Home page")
     body += f'''
@@ -404,7 +403,6 @@ def build_home():
             <li><strong>Veteran owned and operated.</strong> Integrity and accountability on every job.</li>
             <li><strong>Open 24/7, 365 days a year.</strong> Call any time, day or night.</li>
             <li><strong>Free, upfront quotes.</strong> The price we quote is the price you pay.</li>
-            <li><strong>Licensed and insured</strong> for your protection on every job.</li>
             <li><strong>We haul everything.</strong> No dumpster rental needed on most jobs.</li>
             <li><strong>We protect your home</strong> with floor, surface and dust protection.</li>
             <li><strong>Donate &amp; recycle</strong> metal, concrete and usable items whenever possible.</li>
@@ -466,7 +464,7 @@ def build_home():
     body += faq_block(HOME_FAQS, "Demolition & Junk Removal Questions")
     body += quote_section("Home page")
     write("/", head(f"Demolition & Junk Removal in {CITY}, {STATE} | Free Quotes",
-                    f"{CITY}, {STATE} demolition and junk removal. Sheds, decks, garages, interior tear-outs, concrete, "
+                    f"{CITY}, {STATE} demolition and junk removal. Sheds, decks, fences, interior tear-outs, concrete, "
                     f"clean-outs and remodel protection across Sumner County. Free quotes.",
                     "/", [business_schema(), faq_schema(HOME_FAQS)]) + header("/") + body + footer(), 1.0)
 

@@ -33,25 +33,25 @@ LOCATIONS = [
  "slug": "airport-road", "name": "Airport Road",
  "title": "Demolition & Junk Removal on Airport Road, Gallatin TN",
  "desc": "Demolition, junk removal and concrete removal for homes and businesses along the Airport Road corridor in Gallatin, TN, near Sumner County Regional Airport.",
- "lead": "Homes, businesses and larger lots along the Airport Road corridor. Outbuilding demolition, concrete removal, commercial clean-outs and hauling.",
+ "lead": "Homes, businesses and larger lots along the Airport Road corridor. Shed removal, concrete removal, commercial clean-outs and hauling.",
  "about": [
   "The Airport Road corridor near Sumner County Regional Airport mixes residential streets with commercial, industrial and larger rural lots. That means a wide variety of jobs, from a homeowner clearing out a garage to a business removing old shelving, offices or a concrete pad.",
-  "Along Airport Road we often remove outbuildings, carports and metal sheds, break out old concrete slabs and pads, haul away commercial junk and equipment, and do light commercial interior demolition for businesses moving in or out. We bring the right size trailer for the job and schedule around your business hours so operations aren't interrupted."
+  "Along Airport Road we often remove small carports and metal sheds, break out old concrete slabs and pads, haul away commercial junk and equipment, and do light commercial interior demolition for businesses moving in or out. We bring the right size trailer for the job and schedule around your business hours so operations aren't interrupted."
  ],
- "jobs": ["concrete-removal", "garage-demolition", "shed-removal", "large-room-demolition", "junk-removal", "exterior-demolition"],
+ "jobs": ["concrete-removal", "garage-clean-out", "shed-removal", "large-room-demolition", "junk-removal", "exterior-demolition"],
  "map": "Airport Rd, Gallatin, TN",
  "nearby": ["downtown-gallatin", "dobbins-pike", "nexus-north"]
 },
 {
  "slug": "dobbins-pike", "name": "Dobbins Pike",
  "title": "Demolition & Junk Removal on Dobbins Pike, Gallatin TN",
- "desc": "Shed, barn, fence and outbuilding removal plus junk hauling for properties along Dobbins Pike in Gallatin, TN. Large-lot and rural property experts.",
- "lead": "Larger lots and country properties along Dobbins Pike. Old barns, sheds, fencing, outbuildings and years of accumulated junk cleared out.",
+ "desc": "Shed, fence, concrete and brush removal plus junk hauling for properties along Dobbins Pike in Gallatin, TN. Large-lot and rural property experts.",
+ "lead": "Larger lots and country properties along Dobbins Pike. Old sheds, fencing, concrete pads and years of accumulated junk cleared out.",
  "about": [
-  "Properties along Dobbins Pike range from established homes to larger lots with more room to spread out, and room to spread out often means old sheds, small barns, carports, long runs of fencing and piles of materials that have built up over the years.",
-  "We help Dobbins Pike property owners take down aging outbuildings, pull old wood and wire fencing (posts included), remove concrete pads and old foundations, clear brush and overgrown landscaping, and haul off scrap metal, old equipment and junk. Larger rural lots sometimes need longer carries or equipment access, and we plan for that up front so your quote is accurate."
+  "Properties along Dobbins Pike range from established homes to larger lots with more room to spread out, and room to spread out often means old sheds, carports, long runs of fencing and piles of materials that have built up over the years.",
+  "We help Dobbins Pike property owners take down aging sheds, pull old wood and wire fencing (posts included), remove concrete pads and old foundations, clear brush and overgrown landscaping, and haul off scrap metal, old equipment and junk. Larger rural lots sometimes need longer carries or equipment access, and we plan for that up front so your quote is accurate."
  ],
- "jobs": ["shed-removal", "fence-removal", "garage-demolition", "landscape-removal", "concrete-removal", "junk-removal"],
+ "jobs": ["shed-removal", "fence-removal", "deck-removal", "landscape-removal", "concrete-removal", "junk-removal"],
  "map": "Dobbins Pike, Gallatin, TN",
  "nearby": ["airport-road", "nexus-north", "station-camp"]
 },
@@ -100,7 +100,7 @@ LOCATIONS = [
  "desc": "Demolition, junk removal and clean-outs for the Station Camp area of Gallatin, TN. Basements, decks, sheds, fencing and remodel tear-outs. Free quotes.",
  "lead": "Subdivisions and country lots around Station Camp Creek. Remodel tear-outs, outdoor demolition and hauling for busy families.",
  "about": [
-  "The Station Camp area, on the west side of Gallatin around Station Camp Creek and the Station Camp schools, combines family subdivisions with more rural properties. That mix means our work here ranges from basement and bonus-room tear-outs to old sheds, fences and outbuildings on larger lots.",
+  "The Station Camp area, on the west side of Gallatin around Station Camp Creek and the Station Camp schools, combines family subdivisions with more rural properties. That mix means our work here ranges from basement and bonus-room tear-outs to old sheds, fences and concrete pads on larger lots.",
   "Station Camp homeowners call us for interior demolition before remodels, finished basement tear-outs after water damage, deck and shed removal, fence removal, and junk hauling for busy households. We schedule around school drop-off and pick-up traffic when we can, keep the driveway clear, and leave the property clean at the end of every day."
  ],
  "jobs": ["large-room-demolition", "drywall-removal", "deck-removal", "shed-removal", "fence-removal", "junk-removal"],

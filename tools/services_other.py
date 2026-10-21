@@ -75,7 +75,7 @@ SERVICES_CLEANOUT = [
  "faqs": [
   ("How long does a garage clean-out take?", "Most garage clean-outs take two to four hours, depending on how full the garage is and how much sorting is needed."),
   ("Can you take old paint cans?", "We can take paint cans that are completely dry and empty. Liquid paint and chemicals must go to a household hazardous waste collection."),
-  ("Do you also tear down old garages?", "Yes. See our garage demolition service if the structure itself needs to go.")
+  ("Can you gut the inside of the garage too?", "Yes. See our garage interior demolition service for drywall, shelving, cabinets and built-ins. We don't tear down whole garages, but we can refer you to someone who does.")
  ],
  "related": ["junk-removal", "attic-clean-out", "garage-demolition"]
 },
