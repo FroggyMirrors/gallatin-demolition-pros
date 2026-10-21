@@ -8,7 +8,7 @@ LOGO_IMG = ""  # e.g. "/assets/logo.png" once the logo is ready; leave "" to sho
 PHONE_DISPLAY = "(931) 218-3478"
 PHONE_TEL = "+19312183478"
 
-FORM_ACTION = "https://formspree.io/f/YOUR_FORM_ID"  # placeholder: replace with your Formspree form ID
+FORM_ACTION = "https://formspree.io/f/moejongy"  # placeholder: replace with your Formspree form ID
 GOOGLE_REVIEW_URL = "#"  # your Google Business Profile review link
 
 HOURS_TEXT = [("Open", "24 hours a day"), ("Every day", "365 days a year")]
