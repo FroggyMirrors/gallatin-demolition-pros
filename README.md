@@ -56,7 +56,7 @@ Each quote email says which page it came from (the `requested_from` field).
 
 ## After launch (biggest local SEO wins)
 1. **Google Business Profile**: use the exact same name, phone and city as the site, and list your services and service areas.
-2. **Google Search Console**: verify the domain, then submit `https://www.gallatindemolitionpros.com/sitemap.xml`.
+2. **Google Search Console**: done. Verified with `google72cfd97a97187cd6.html` in the repo root (never delete it, or verification is lost), and `sitemap.xml` is submitted.
 3. **Bing Webmaster Tools**: import from Search Console.
 4. Use the same name, phone and city on Yelp, Facebook, Nextdoor, BBB, Angi and Thumbtack.
 5. Ask every happy customer for a Google review. Mentioning the service and neighborhood in the review helps.
