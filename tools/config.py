@@ -3,6 +3,8 @@ DOMAIN = "https://www.gallatindemolitionpros.com"
 NAME = "Gallatin Demolition Pros"
 SHORT_NAME = "Gallatin Demolition Pros"
 TAGLINE = "Demolition · Junk Removal · Remodel Protection"
+LEGAL_NAME = "Effortless Upgrade Remodeling LLC"  # registered owner of the trade name, shown in the privacy policy
+PRIVACY_EFFECTIVE = "October 22, 2026"  # update when the privacy policy changes
 LOGO_IMG = ""  # e.g. "/assets/logo.png" once the logo is ready; leave "" to show the business name as text
 
 PHONE_DISPLAY = "(931) 218-3478"

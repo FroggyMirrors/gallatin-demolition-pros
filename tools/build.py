@@ -183,7 +183,7 @@ def footer():
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="container">© <span id="year">2026</span> {e(NAME)} · {CITY}, Tennessee</div>
+      <div class="container">© <span id="year">2026</span> {e(NAME)} · {CITY}, Tennessee · <a href="/privacy-policy/">Privacy Policy</a></div>
     </div>
   </footer>
 
@@ -217,6 +217,7 @@ def quick_form(context):
             <div class="quick-fields">{field("name", "Name", "text", "name", "Please enter your name.")}{field("phone", "Phone", "tel", "tel", "Please enter a valid phone number.", ' inputmode="tel"')}{field("address", "Address", "text", "street-address", "Please enter the project address.", ' placeholder="Street, City"')}
               <button class="btn btn-gold" type="submit">Get My Free Quote</button>
             </div>
+            <p class="quick-note">By submitting, you agree we may call or text you about your request. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
           </form>
           <div class="hero-call">
             <span>Or call us now, 24/7</span>
@@ -311,7 +312,7 @@ def quote_section(context):
             </div>
 
             <button class="btn btn-gold" type="submit">Get My Free Quote</button>
-            <p class="form-note">We respect your privacy. Your info is only used to contact you about your project.</p>
+            <p class="form-note">We respect your privacy. Your info is only used to contact you about your project. By submitting, you agree we may call or text you about your request. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
           </form>
         </div>
       </div>
@@ -680,6 +681,84 @@ def build_simple(path, title, eyebrow, h1, lead, button, robots):
     write(path, html.replace('href="#quote"', 'href="/#quote"'))
 
 
+def build_privacy():
+    path = "/privacy-policy/"
+    crumbs = [("Home", "/"), ("Privacy Policy", path)]
+    trail = f'<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a> › Privacy Policy</nav>'
+    body = f'''    <section class="hero page-hero">
+      <div class="container">
+        {trail}<span class="eyebrow">Effective {PRIVACY_EFFECTIVE}</span>
+        <h1>Privacy <span class="gold">Policy</span></h1>
+        <p class="lead">How {e(NAME)} collects, uses and protects the information you share with us.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container prose">
+        <h2>Who we are</h2>
+        <p>{e(NAME)} is a demolition, junk removal and remodel protection business serving {CITY} and Sumner County, Tennessee. {e(NAME)} is a trade name of {e(LEGAL_NAME)}. In this policy, "we," "us" and "our" mean {e(NAME)}, and "you" means anyone who visits this website or contacts us.</p>
+
+        <h2>Information we collect</h2>
+        <p><strong>Information you give us.</strong> When you request a quote on this website, we collect:</p>
+        <ul>
+          <li>Your name, phone number and project address (required)</li>
+          <li>Your email address and a description of the work you need (optional)</li>
+          <li>Which page of our website you sent the request from</li>
+        </ul>
+        <p>When you call or text us, we receive your phone number and anything you choose to tell us. If you hire us, we may also keep job details, photos of the work area, estimates and invoices.</p>
+        <p><strong>Information collected automatically.</strong> Like nearly every website, our web host keeps standard server logs, which can include your IP address, browser type, the pages you visit and the date and time of your visit. We do not use analytics tracking, advertising cookies or retargeting pixels on this website.</p>
+
+        <h2>How we use your information</h2>
+        <ul>
+          <li>To respond to your quote request and answer your questions</li>
+          <li>To schedule, perform and follow up on the work you hire us for</li>
+          <li>To send estimates, invoices and receipts</li>
+          <li>To ask for feedback or a review after your job is complete</li>
+          <li>To keep the records required for our business, tax and legal obligations</li>
+          <li>To protect our website from spam and misuse</li>
+        </ul>
+        <p>We do not use your information for unrelated marketing without your permission.</p>
+
+        <h2>Phone calls and text messages</h2>
+        <p>When you submit a quote request, you agree that we may contact you by phone call or text message at the number you provide about your request and your project. Message and data rates may apply. You can reply STOP to any text to stop receiving texts, or tell us at any time that you would rather not be texted. We do not sell or share your phone number or text messaging consent with anyone for their marketing purposes.</p>
+
+        <h2>How we share information</h2>
+        <p><strong>We do not sell or rent your personal information.</strong> We share it only as needed to run our business:</p>
+        <ul>
+          <li><strong>Service providers</strong> that help us operate, such as Formspree, which delivers website quote requests to us by email; GitHub, which hosts this website; and our phone and email providers. They may use your information only to provide their services to us.</li>
+          <li><strong>Legal reasons</strong>, when required by law, subpoena or court order, or to protect our rights, our customers or the public.</li>
+          <li><strong>A business transfer</strong>, if our business is sold or merged, in which case this policy would continue to apply to your information.</li>
+        </ul>
+
+        <h2>Third-party services on this website</h2>
+        <p>This website loads fonts from Google Fonts, and some pages show embedded Google Maps. When your browser loads these, Google may receive your IP address and may set its own cookies under the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>. Links to other websites, such as Google reviews or social media pages, are covered by those websites' own privacy policies.</p>
+
+        <h2>How long we keep information</h2>
+        <p>We keep quote requests and job records only as long as needed for the purposes in this policy, including our business, tax and legal record-keeping. Quote requests that do not turn into jobs are deleted when they are no longer needed.</p>
+
+        <h2>How we protect information</h2>
+        <p>This website uses an encrypted HTTPS connection, and we limit access to customer information to the people who need it to serve you. No method of sending or storing information is completely secure, so we cannot guarantee absolute security, but we take reasonable steps to protect what you share with us.</p>
+
+        <h2>Your choices</h2>
+        <p>You can ask us at any time to tell you what information we have about you, correct it, or delete it, unless we are required to keep it for legal or tax reasons. You can also ask us to stop calling or texting you. To make a request, call or text us at {tel_link()}.</p>
+
+        <h2>Children's privacy</h2>
+        <p>This website is not directed to children under 13, and we do not knowingly collect personal information from children. If you believe a child has sent us information, contact us and we will delete it.</p>
+
+        <h2>Changes to this policy</h2>
+        <p>We may update this policy from time to time. When we do, we will post the new version on this page and change the effective date at the top.</p>
+
+        <h2>Contact us</h2>
+        <p>Questions about this policy or your information? Contact {e(NAME)} by phone or text at {tel_link()}, or use the quote form on any page of this website. We serve {CITY}, {STATE} {ZIP} and the surrounding area.</p>
+      </div>
+    </section>
+'''
+    html = head(f"Privacy Policy | {NAME}", f"How {NAME} collects, uses and protects the information you share "
+                "through our quote forms, phone calls and text messages.", path, [breadcrumb_schema(crumbs)])
+    # No quote form on this page, so the "Free Quote" links go to the home page form
+    write(path, (html + header() + body + footer()).replace('href="#quote"', 'href="/#quote"'), 0.3)
+
+
 def build_meta_files():
     urls = "\n".join(f"  <url><loc>{DOMAIN}{p}</loc><lastmod>{LASTMOD}</lastmod><priority>{pr:.1f}</priority></url>"
                      for p, pr in PAGES)
@@ -700,6 +779,7 @@ def main():
     build_areas_hub()
     for l in LOCATIONS:
         build_location(l)
+    build_privacy()
     build_simple("/thank-you/", f"Thank You | {NAME}", "Request Received", 'Thank <span class="gold">You!</span>',
                  "We got your quote request and will reach out shortly. Need help sooner? Give us a call.",
                  f'<a class="btn btn-gold btn-xl" href="tel:{PHONE_TEL}">📞 {PHONE_DISPLAY}</a>', "noindex, follow")
