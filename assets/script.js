@@ -51,7 +51,8 @@ document.querySelectorAll(".quote-form").forEach((form) => {
     const button = form.querySelector("button[type=submit]");
     const label = button.textContent;
     button.disabled = true;
-    button.textContent = "Sending…";
+    // Spanish pages set their own thank-you page and messages with data- attributes
+    button.textContent = form.dataset.sending || "Sending…";
 
     try {
       const res = await fetch(form.action, {
@@ -60,10 +61,11 @@ document.querySelectorAll(".quote-form").forEach((form) => {
         headers: { Accept: "application/json" },
       });
       if (!res.ok) throw new Error(res.status);
-      window.location.href = "/thank-you/";
+      window.location.href = form.dataset.thanks || "/thank-you/";
     } catch (err) {
       button.disabled = false;
       button.textContent = label;
+      if (form.dataset.error) return alert(form.dataset.error);
       const phone = document.querySelector('a[href^="tel:"]');
       alert("Sorry, something went wrong sending your request. Please call us" + (phone ? " at " + phone.textContent.replace("📞", "").trim() : "") + ".");
     }

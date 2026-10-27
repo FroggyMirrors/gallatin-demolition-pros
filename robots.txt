@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /thank-you/
+Disallow: /es/gracias/
 Disallow: /tools/
 
 Sitemap: https://www.gallatindemolitionpros.com/sitemap.xml

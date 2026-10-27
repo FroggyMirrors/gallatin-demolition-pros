@@ -376,3 +376,11 @@ section[id] { scroll-margin-top: 80px; }
 .quick-note { margin: 12px 0 0; font-size: .85rem; color: var(--gray); text-align: center; }
 .quick-note a, .form-note a { color: var(--gold); }
 .form-note a { color: inherit; text-decoration: underline; text-decoration-color: var(--gold); }
+
+/* English / Español switch in the main nav */
+.nav .lang-switch { border: 1px solid var(--gold); border-radius: 999px; padding: 4px 12px; font-size: .9rem; color: var(--gold); }
+.nav .lang-switch:hover { background: var(--gold); color: var(--black); }
+@media (max-width: 900px) {
+  .nav .lang-switch { border: 0; border-bottom: 1px solid #262626; border-radius: 0; padding: 14px 0; font-size: .98rem; }
+  .nav .lang-switch:hover { background: none; color: var(--gold); }
+}
