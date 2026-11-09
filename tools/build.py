@@ -12,6 +12,7 @@ from config import *
 from services_demo import SERVICES_DEMO
 from services_other import SERVICES_CLEANOUT, SERVICES_PROTECT
 from locations import LOCATIONS
+from towns import TOWNS
 from spanish import ES_PATHS, CATEGORIES_ES, SERVICE_NAMES_ES, SERVICES_ES, HOME_FAQS_ES
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -73,6 +74,14 @@ UI = {
 SERVICES = SERVICES_DEMO + SERVICES_CLEANOUT + SERVICES_PROTECT
 BY_SLUG = {s["slug"]: s for s in SERVICES}
 LOC_BY_SLUG = {l["slug"]: l for l in LOCATIONS}
+TOWN_BY_SLUG = {t["slug"]: t for t in TOWNS}
+TOWN_BY_NAME = {t["name"]: t for t in TOWNS}
+
+
+def city_item(c):
+    """A nearby city as a list item, linked to its town page when it has one."""
+    t = TOWN_BY_NAME.get(c)
+    return f'<li><a href="/service-areas/{t["slug"]}/">{c}</a></li>' if t else f"<li>{c}</li>"
 CATEGORIES = [
     ("demolition", "Demolition", "Indoor and outdoor demolition, from a single shed to a full interior gut-out."),
     ("cleanout", "Junk Removal & Clean-Outs", "We do all the lifting and hauling, and donate and recycle whenever we can."),
@@ -273,6 +282,7 @@ def footer(lang="en"):
         return "".join(f'<li><a href="/{s["slug"]}/">{e(s["name"])}</a></li>' for s in SERVICES if s["cat"] == cat)
     hours = "".join(f"<li>{d}: {h}</li>" for d, h in HOURS_TEXT)
     areas = "".join(f'<li><a href="/service-areas/{l["slug"]}/">{e(l["name"])}</a></li>' for l in LOCATIONS)
+    areas += "".join(f'<li><a href="/service-areas/{t["slug"]}/">{e(t["name"])}, {STATE}</a></li>' for t in TOWNS)
     return f'''  </main>
 
   <footer class="site-footer">
@@ -500,7 +510,7 @@ def build_home():
                 "shed-removal", "deck-removal", "concrete-removal", "garage-clean-out", "remodeling-plastic-protection"]
     cards = "".join(service_card(BY_SLUG[s]) for s in featured)
     areas = "".join(f'<li><a href="/service-areas/{l["slug"]}/">{e(l["name"])}</a></li>' for l in LOCATIONS)
-    cities = "".join(f"<li>{c}</li>" for c in NEARBY_CITIES)
+    cities = "".join(city_item(c) for c in NEARBY_CITIES)
     body = hero(f'Demolition &amp; Junk Removal in <span class="gold">{CITY}, {STATE}</span>',
                 "From sheds, decks and fences to full interior tear-outs and clean-outs, we knock it down, haul it off "
                 "and leave your property clean. Veteran owned. Open 24/7.",
@@ -701,10 +711,17 @@ def build_areas_hub():
             <span class="more">{e(l["name"])} services →</span>
           </a>
 ''' for l in LOCATIONS)
-    cities = "".join(f"<li>{c}, {STATE}</li>" for c in NEARBY_CITIES)
+    towns = "".join(f'''          <a class="card card-link" href="/service-areas/{t["slug"]}/">
+            <h3>{e(t["name"])}, {STATE}</h3>
+            <p>{e(t["lead"])}</p>
+            <span class="more">{e(t["name"])} services →</span>
+          </a>
+''' for t in TOWNS)
+    cities = "".join(f"<li>{c}, {STATE}</li>" for c in NEARBY_CITIES if c not in TOWN_BY_NAME)
     crumbs = [("Home", "/"), ("Service Areas", "/service-areas/")]
     body = hero(f'Service Areas in <span class="gold">{CITY}, {STATE}</span>',
-                f"We're based in {CITY} and serve every neighborhood in town, plus communities across Sumner County.", crumbs,
+                f"We're based in {CITY} and serve every neighborhood in town, plus Hendersonville, Portland, White House, "
+                "Goodlettsville and communities across Sumner County.", crumbs,
                 context="Service Areas page")
     body += f'''
     <section class="section section-light">
@@ -719,11 +736,23 @@ def build_areas_hub():
       </div>
     </section>
 
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Nearby Towns</span>
+          <h2>Serving Sumner County and Beyond</h2>
+          <p>Our crew works all over the area, with no travel fees in these nearby towns.</p>
+        </div>
+        <div class="grid grid-2">
+{towns}        </div>
+      </div>
+    </section>
+
     <section class="section section-dark">
       <div class="container">
         <div class="section-head">
           <span class="kicker">Sumner County &amp; Beyond</span>
-          <h2>Nearby Communities We Serve</h2>
+          <h2>More Communities We Serve</h2>
         </div>
         <ul class="areas">{cities}</ul>
       </div>
@@ -789,6 +818,66 @@ def build_location(l):
     body += quote_section(f"{l['name']} area page")
     schemas = [service_schema("Demolition and Junk Removal", path, f"{l['name']}, {CITY}, {STATE}"), breadcrumb_schema(crumbs)]
     write(path, head(l["title"], l["desc"], path, schemas) + header(path) + body + footer(), 0.7)
+
+
+def build_town(t):
+    """Page for a nearby town (Hendersonville, Portland...), as opposed to a Gallatin neighborhood."""
+    path = f"/service-areas/{t['slug']}/"
+    place = f"{t['name']}, {STATE}"
+    crumbs = [("Home", "/"), ("Service Areas", "/service-areas/"), (place, path)]
+    about = "".join(f"<p>{e(p)}</p>" for p in t["about"])
+    jobs = "".join(service_card(BY_SLUG[s]) for s in t["jobs"])
+    other = "".join(f'<li><a href="/{s["slug"]}/">{e(s["name"])}</a></li>' for s in SERVICES if s["slug"] not in t["jobs"])
+    nearby = "".join(f'<li><a href="/service-areas/">{CITY}, {STATE}</a></li>' if n == "gallatin" else
+                     f'<li><a href="/service-areas/{n}/">{e(TOWN_BY_SLUG[n]["name"])}, {STATE}</a></li>' for n in t["nearby"])
+    map_q = e(t["map"]).replace(" ", "+")
+    body = hero(f'Demolition &amp; Junk Removal in <span class="gold">{e(place)}</span>', t["lead"], crumbs,
+                eyebrow=f"Serving {t['name']} from {CITY}", context=f"{t['name']} town page")
+    body += f'''
+    <section class="section">
+      <div class="container split">
+        <div>
+          <span class="kicker">{e(place)}</span>
+          <h2>Your Local Crew in {e(t["name"])}</h2>
+          {about}
+          <a class="btn btn-gold" href="#quote">Get a Free {e(t["name"])} Quote</a>
+        </div>
+        <div class="map">
+          <iframe title="Map of {e(place)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q={map_q}&amp;output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Popular in {e(t["name"])}</span>
+          <h2>Most Requested Services in {e(t["name"])}</h2>
+        </div>
+        <div class="grid grid-3">
+{jobs}        </div>
+      </div>
+    </section>
+'''
+    body += faq_block(t["faqs"], f"{t['name']} Demolition & Junk Removal FAQ")
+    body += f'''
+    <section class="section section-dark">
+      <div class="container grid grid-2">
+        <div>
+          <h2>Every Service, Available in {e(t["name"])}</h2>
+          <ul class="link-list">{other}</ul>
+        </div>
+        <div>
+          <h2>Nearby Areas</h2>
+          <ul class="link-list">{nearby}<li><a href="/service-areas/">All service areas</a></li></ul>
+        </div>
+      </div>
+    </section>
+'''
+    body += quote_section(f"{t['name']} town page")
+    schemas = [service_schema("Demolition and Junk Removal", path, place), breadcrumb_schema(crumbs), faq_schema(t["faqs"])]
+    write(path, head(t["title"], t["desc"], path, schemas) + header(path) + body + footer(), 0.8)
 
 
 def build_simple(path, title, eyebrow, h1, lead, button, robots, lang="en"):
@@ -1217,6 +1306,8 @@ def main():
     build_areas_hub()
     for l in LOCATIONS:
         build_location(l)
+    for t in TOWNS:
+        build_town(t)
     build_privacy()
     build_spanish()
     build_simple("/thank-you/", f"Thank You | {NAME}", "Request Received", 'Thank <span class="gold">You!</span>',
@@ -1230,11 +1321,14 @@ def main():
     for s in SERVICES:
         if len(s["title"]) > 65 or len(s["desc"]) > 160:
             print(f"  note: long title/description on {s['slug']} ({len(s['title'])}/{len(s['desc'])} chars)")
+    for tw in TOWNS:
+        if len(tw["title"]) > 65 or len(tw["desc"]) > 160:
+            print(f"  note: long town title/description on {tw['slug']} ({len(tw['title'])}/{len(tw['desc'])} chars)")
     for slug, s in SERVICES_ES.items():
         if len(s["title"]) > 65 or len(s["desc"]) > 160:
             print(f"  note: long Spanish title/description on {slug} ({len(s['title'])}/{len(s['desc'])} chars)")
     print(f"Built {len(PAGES)} indexable pages + 2 thank-you pages + 404 ({len(SERVICES)} services, "
-          f"{len(LOCATIONS)} areas, {len(SERVICES_ES)} Spanish service pages)")
+          f"{len(LOCATIONS)} areas, {len(TOWNS)} towns, {len(SERVICES_ES)} Spanish service pages)")
 
 
 if __name__ == "__main__":
