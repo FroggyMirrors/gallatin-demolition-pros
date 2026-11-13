@@ -505,6 +505,36 @@ HOME_FAQS = [
 ]
 
 
+def review_section(lang):
+    """"Leave a review" section. Hidden until GOOGLE_REVIEW_URL in config.py holds the real link,
+    which Google only provides once the Business Profile is verified."""
+    if GOOGLE_REVIEW_URL in ("", "#"):
+        return ""
+    if lang == "es":
+        return f'''
+    <section class="section section-light" id="reviews">
+      <div class="container review-cta">
+        <span class="kicker">Reseñas de Clientes</span>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <h2>¿Ya Trabajó con Nosotros?</h2>
+        <p>Somos un negocio local de {CITY} que se gana su reputación trabajo por trabajo. Si le ayudamos, una reseña rápida en Google significa mucho para nosotros.</p>
+        <a class="btn btn-gold" href="{GOOGLE_REVIEW_URL}" rel="nofollow">Déjenos una Reseña en Google</a>
+      </div>
+    </section>
+'''
+    return f'''
+    <section class="section section-light" id="reviews">
+      <div class="container review-cta">
+        <span class="kicker">Customer Reviews</span>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <h2>Worked With Us?</h2>
+        <p>We're a locally owned {CITY} business earning our reputation one job at a time. If we've helped you, a quick Google review means the world to us.</p>
+        <a class="btn btn-gold" href="{GOOGLE_REVIEW_URL}" rel="nofollow">Leave Us a Google Review</a>
+      </div>
+    </section>
+'''
+
+
 def build_home():
     featured = ["junk-removal", "interior-demolition", "kitchen-demolition", "bathroom-demolition",
                 "shed-removal", "deck-removal", "concrete-removal", "garage-clean-out", "remodeling-plastic-protection"]
@@ -587,16 +617,7 @@ def build_home():
       </div>
     </section>
 
-    <section class="section section-light" id="reviews">
-      <div class="container review-cta">
-        <span class="kicker">Customer Reviews</span>
-        <div class="stars" aria-hidden="true">★★★★★</div>
-        <h2>Worked With Us?</h2>
-        <p>We're a locally owned {CITY} business earning our reputation one job at a time. If we've helped you, a quick Google review means the world to us.</p>
-        <a class="btn btn-gold" href="{GOOGLE_REVIEW_URL}" rel="nofollow">Leave Us a Google Review</a>
-      </div>
-    </section>
-'''
+{review_section("en")}'''
     body += faq_block(HOME_FAQS, "Demolition & Junk Removal Questions")
     body += quote_section("Home page")
     write("/", head(f"Demolition & Junk Removal in {CITY}, {STATE} | Free Quotes",
@@ -1074,16 +1095,7 @@ def build_es_home():
       </div>
     </section>
 
-    <section class="section section-light" id="reviews">
-      <div class="container review-cta">
-        <span class="kicker">Reseñas de Clientes</span>
-        <div class="stars" aria-hidden="true">★★★★★</div>
-        <h2>¿Ya Trabajó con Nosotros?</h2>
-        <p>Somos un negocio local de {CITY} que se gana su reputación trabajo por trabajo. Si le ayudamos, una reseña rápida en Google significa mucho para nosotros.</p>
-        <a class="btn btn-gold" href="{GOOGLE_REVIEW_URL}" rel="nofollow">Déjenos una Reseña en Google</a>
-      </div>
-    </section>
-'''
+{review_section("es")}'''
     body += faq_block(HOME_FAQS_ES, "Preguntas sobre Demolición y Retiro de Basura", kicker="Preguntas Frecuentes")
     body += quote_section("Spanish home page", "es")
     write(path, head(f"Demolición y Retiro de Basura en {CITY}, {STATE} | Cotización Gratis",
